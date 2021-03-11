@@ -16,8 +16,8 @@ const UploadForm = () => {
       setError(null)
     } else {
       setFile(null)
-      setError('Please select an image file (png or jpeg')
-      toast.error(error)
+      setError('Please select an image file (png or jpeg)')
+      toast.error('Please select an image file (png or jpeg)')
     }
   }
 
