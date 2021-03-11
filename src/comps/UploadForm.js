@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import ProgressBar from './ProgressBar'
 import { toast } from 'react-toastify'
 
 const UploadForm = () => {
@@ -22,9 +23,21 @@ const UploadForm = () => {
 
   return (
     <form>
-      <input type='file' file={file} onChange={fileUploadHandler} />
-      {error && <div className='error'>{error}</div>}
-      {file && <div>{file.name}</div>}
+      <label htmlFor='file'>
+        <input
+          type='file'
+          file={file}
+          id='file'
+          name='file'
+          onChange={fileUploadHandler}
+        />
+        <span>+</span>
+      </label>
+      <div className='output'>
+        {error && <div className='error'>{error}</div>}
+        {file && <div>{file.name}</div>}
+        {file && <ProgressBar file={file} setFile={setFile} />}
+      </div>
     </form>
   )
 }
