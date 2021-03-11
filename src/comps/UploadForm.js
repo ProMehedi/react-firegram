@@ -13,7 +13,6 @@ const UploadForm = () => {
     if (selectedFile && types.includes(selectedFile.type)) {
       setFile(selectedFile)
       setError(null)
-      toast.success('File Uploding!')
     } else {
       setFile(null)
       setError('Please select an image file (png or jpeg')
